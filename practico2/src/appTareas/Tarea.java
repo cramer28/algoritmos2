@@ -3,14 +3,18 @@ package appTareas;
 
 public class Tarea {
     
-    String name;
-    String desc;
+    private String name;
+    private String desc;
     
+        //constructores
+
     public Tarea(String name, String desc){
         this.name = name;
         this.desc = desc;
     }
     
+        //metodos
+
     public String leerName(){
         return this.name;
     }
