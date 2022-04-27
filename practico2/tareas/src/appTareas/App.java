@@ -85,9 +85,9 @@ public class App {
                         }
                 
             
-           
+                        
                     }while(opc1!=0);
-            
+                    break;
                 case 2:
                     do{
                         System.out.println("\n 1-Crear Recordatorio \n 2-Ver recordatorios  \n 0-Volver atras");
@@ -117,13 +117,10 @@ public class App {
                                     for(x = 0; x<tareas.size(); x++){
                                         System.out.println(x+" / "+recordatorios.get(x).leerName()+" / "+recordatorios.get(x).leerDesc() + " / " + recordatorios.get(x).getFecha() + " / " + recordatorios.get(x).getHora());
                                     }
-                                }    
+                                }
+                                break;
                         }
                     }while(opc2!=0);
-                    
-                    
-                    
-                    name = sc.nextLine();
                     break;
                 case 3:
                     do{
@@ -155,19 +152,18 @@ public class App {
                                     for(x = 0; x<eventos.size(); x++){
                                         System.out.println(x+" / "+eventos.get(x).leerName()+" / "+eventos.get(x).leerDesc() + " / " +eventos.get(x).leerFecha() + " / " +eventos.get(x).leerHoraInicio()+" / " +eventos.get(x).leerHoraFin());
                                     }
-                                }    
+                                }
+                            break;
                         }
-                    
+                        
                     }while(opc2!=0);
-                    break;
-        
+                    
+                break;
+
             }
-        
-        
-        
-        
-        
-    }while(menu!=0);
-    sc.close();
-}
+        }while(menu!=0);
+    
+        sc.close();
+
+    }
 }
