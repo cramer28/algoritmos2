@@ -18,7 +18,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int opc1,opc2,opc3,x;
         String name, desc;
-        //Tarea lista[] = new Tarea[10];
+        
         ArrayList<Tarea> lista = new ArrayList<Tarea>();
         do{
             System.out.println("1 - Crear Tarea\n2 - Ver lista\n0 - Salir");
