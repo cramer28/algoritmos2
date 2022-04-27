@@ -21,7 +21,7 @@ public class App {
         
         ArrayList<Tarea> lista = new ArrayList<Tarea>();
         do{
-            System.out.println("1 - Crear Tarea\n2 - Ver lista\n0 - Salir");
+            System.out.println("1 - Crear Tarea\n2 - Ver lista\n0 - Salir"); //menu 
             opc1 = sc.nextInt();
             sc.nextLine();
             switch(opc1){
