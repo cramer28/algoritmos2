@@ -18,8 +18,9 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int menu, opc1,opc2,opc3,x;
         String name, desc;
-        
-        ArrayList<Tarea> lista = new ArrayList<Tarea>();
+        ArrayList<Tarea> tareas = new ArrayList<Tarea>();
+        ArrayList<Recordatorio> recordatorios = new ArrayList<Recordatorio>();
+        ArrayList<Evento> eventos = new ArrayList<Evento>();
         
         do{
             System.out.println("1 - Tarea\n2 - Recordatorio \n3 - Evento \n 0-Salir"); //menu 
@@ -40,15 +41,15 @@ public class App {
                                 name = sc.nextLine();
                                 System.out.println("Ingresar la descripcion de la tarea");
                                 desc = sc.nextLine();
-                                lista.add(new Tarea(name, desc));
+                                tareas.add(new Tarea(name, desc));
                                 break;
                             case 2:  //ver lista
-                                if(lista.size() < 1){
+                                if(tareas.size() < 1){
                                     System.out.println("No hay tareas");
                                 }else{
                                     System.out.println("Id  / Nombre Tarea / Descripcion Tarea");
-                                    for(x = 0; x<lista.size(); x++){
-                                        System.out.println(x+"  / "+lista.get(x).leerName()+" / "+lista.get(x).leerDesc());
+                                    for(x = 0; x<tareas.size(); x++){
+                                        System.out.println(x+"  / "+tareas.get(x).leerName()+" / "+tareas.get(x).leerDesc());
                                     }
                                     System.out.println("Opciones a continuacion:\n1 - Modificar Tarea\n2 - Eliminar Tarea\n0 - Volver al menu principal");
                                     opc2 = sc.nextInt();
@@ -62,14 +63,14 @@ public class App {
                                             name = sc.nextLine();
                                             System.out.println("Ingresar la nueva descripcion de la tarea");
                                             desc = sc.nextLine();
-                                            if(lista.get(opc3).modName(name)==1){
+                                            if(tareas.get(opc3).modName(name)==1){
                                                 System.out.println("Nombre modificado correctamente");
                                             }
-                                            if(lista.get(opc3).modDesc(desc)==1){
+                                            if(tareas.get(opc3).modDesc(desc)==1){
                                                 System.out.println("Descripcion modificada correctamente");
                                             }
                                         }else if(opc2 == 2){
-                                            lista.remove(opc3);
+                                            tareas.remove(opc3);
                                             System.out.println("Tarea Eliminada correctamente");
                                         }
                                     }
@@ -96,6 +97,7 @@ public class App {
         
         
         
-    }while();
+    }while(menu!=0);
     sc.close();
+}
 }
