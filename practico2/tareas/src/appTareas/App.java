@@ -17,7 +17,7 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int menu, opc1,opc2,opc3,x;
-        String name, desc;
+        String name, desc, fecha, hora;
         ArrayList<Tarea> tareas = new ArrayList<Tarea>();
         ArrayList<Recordatorio> recordatorios = new ArrayList<Recordatorio>();
         ArrayList<Evento> eventos = new ArrayList<Evento>();
@@ -31,7 +31,7 @@ public class App {
                 
                 case 1:
                     do{
-                        System.out.println("1 - Crear Tarea\n2 - Ver lista\n0 - Salir"); //menu 
+                        System.out.println("1 - Crear Tarea\n2 - Ver lista\n0 - Voler atras"); //tareas 
                         opc1 = sc.nextInt();
                         sc.nextLine();
 
@@ -89,6 +89,41 @@ public class App {
                     }while(opc1!=0);
             
                 case 2:
+                    do{
+                        System.out.println("\n 1-Crear Recordatorio \n 2-Ver recordatorios  \n 0-Volver atras");
+                        opc2 = sc.nextInt();
+                        sc.nextLine();
+                        
+                        switch(opc2){
+                            case 1:
+                                
+                                System.out.println("Ingrese el nombre de la tarea:\n");
+                                name = sc.nextLine();
+                                System.out.println("Ingrese la descripcion de la tarea:\n");
+                                desc = sc.nextLine();
+                                System.out.println("Ingrese la fecha de la tarea:\n");
+                                fecha = sc.nextLine();
+                                System.out.println("Ingrese la hora de la tarea:\n");
+                                hora = sc.nextLine();
+                                
+                                recordatorios.add(new Recordatorio(name, desc,fecha, hora));
+                                break;
+                                
+                            case 2:
+                                if(recordatorios.size() < 1){
+                                    System.out.println("No hay recordatorios");
+                                }else{
+                                    System.out.println("Nombre / Descripcion / Fecha / Hora");
+                                    for(x = 0; x<tareas.size(); x++){
+                                        System.out.println(x+" / "+recordatorios.get(x).leerName()+" / "+recordatorios.get(x).leerDesc() + " / " + recordatorios.get(x).getFecha() + " / " + recordatorios.get(x).getHora());
+                                    }
+                                }    
+                        }
+                    }while(opc2!=0);
+                    
+                    
+                    
+                    name = sc.nextLine();
                     break;
         
             }
