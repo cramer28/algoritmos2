@@ -3,8 +3,8 @@ package appTareas;
 
 public class Tarea {
     
-    private String name;
-    private String desc;
+    protected String name;
+    protected String desc;
     
         //Constructores
 
