@@ -146,7 +146,7 @@ public class App {
                                 
                             case 2:
                                 if(eventos.size() < 1){
-                                    System.out.println("No hay recordatorios");
+                                    System.out.println("No hay eventos");
                                 }else{
                                     System.out.println("Nombre / Descripcion / Fecha / Horario Inicio / Horario Fin");
                                     for(x = 0; x<eventos.size(); x++){
