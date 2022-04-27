@@ -6,14 +6,14 @@ public class Tarea {
     private String name;
     private String desc;
     
-        //constructores
+        //Constructores
 
     public Tarea(String name, String desc){
         this.name = name;
         this.desc = desc;
     }
     
-        //metodos
+        //Metodos
 
     public String leerName(){
         return this.name;
@@ -22,7 +22,7 @@ public class Tarea {
     public String leerDesc(){
         return this.desc;
     }
-    
+        //Modificar nombre
     public int modName(String newName){
         if(newName!=null){
             this.name = newName;
@@ -32,7 +32,7 @@ public class Tarea {
         }
         
     }
-    
+        //Modificar descripcion
     public int modDesc(String newDesc) {
         if(newDesc!=null){
             this.desc = newDesc;
