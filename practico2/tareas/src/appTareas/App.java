@@ -17,7 +17,7 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int menu, opc1,opc2,opc3,x;
-        String name, desc, fecha, hora;
+        String name, desc, fecha, hora, fecha_evento, horario_inicio, horario_fin;
         ArrayList<Tarea> tareas = new ArrayList<Tarea>();
         ArrayList<Recordatorio> recordatorios = new ArrayList<Recordatorio>();
         ArrayList<Evento> eventos = new ArrayList<Evento>();
@@ -124,6 +124,41 @@ public class App {
                     
                     
                     name = sc.nextLine();
+                    break;
+                case 3:
+                    do{
+                        System.out.println("\n 1-Crear Evento \n 2-Ver Eventos  \n 0-Volver atras");
+                        opc2 = sc.nextInt();
+                        sc.nextLine();
+                        
+                        switch(opc2){
+                            case 1:
+                                
+                                System.out.println("Ingrese el nombre del Evento:\n");
+                                name = sc.nextLine();
+                                System.out.println("Ingrese la descripcion del Evento:\n");
+                                desc = sc.nextLine();
+                                System.out.println("Ingrese la fecha del Evento:\n");
+                                fecha_evento = sc.nextLine();
+                                System.out.println("Ingrese la hora de inicio del Evento:\n");
+                                horario_inicio = sc.nextLine();
+                                System.out.println("Ingrese la hora de fin del Evento:\n");
+                                horario_fin = sc.nextLine();
+                                eventos.add(new Evento(name, desc,fecha_evento, horario_inicio, horario_fin));
+                                break;
+                                
+                            case 2:
+                                if(eventos.size() < 1){
+                                    System.out.println("No hay recordatorios");
+                                }else{
+                                    System.out.println("Nombre / Descripcion / Fecha / Horario Inicio / Horario Fin");
+                                    for(x = 0; x<eventos.size(); x++){
+                                        System.out.println(x+" / "+eventos.get(x).leerName()+" / "+eventos.get(x).leerDesc() + " / " +eventos.get(x).leerFecha() + " / " +eventos.get(x).leerHoraInicio()+" / " +eventos.get(x).leerHoraFin());
+                                    }
+                                }    
+                        }
+                    
+                    }while(opc2!=0);
                     break;
         
             }

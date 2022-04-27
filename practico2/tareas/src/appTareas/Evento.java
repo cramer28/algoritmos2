@@ -6,8 +6,11 @@ public class Evento extends Tarea {
     protected String horario_inicio;
     protected String horario_fin;
     
-    public Evento(String name, String desc) {
+    public Evento(String name, String desc, String fecha_evento, String horario_inicio , String horario_fin){
         super(name, desc);
+        this.fecha_evento = fecha_evento;
+        this.horario_inicio = horario_inicio;
+        this.horario_fin = horario_fin;
     }
      //Metodos Fecha
     public String leerFecha(){
@@ -30,7 +33,7 @@ public class Evento extends Tarea {
     public void HorarioInicio(){
         System.out.println("El horario de inicio es: "+this.horario_inicio);
      }
-        //Modificar Horarios
+        //Modificar Horario Inicio
         public void modHorarioInicio(String newHorarioInicio){
             if(newHorarioInicio!=null){
                 this.horario_inicio = newHorarioInicio;
@@ -38,17 +41,18 @@ public class Evento extends Tarea {
           }
     
     
-    public String leerHorarioFin(){
+    public String leerHoraFin(){
     return this.horario_fin;
      }
     public void MostrarHorarioFin(){
         System.out.println("El horario de fin es: "+this.horario_fin);
      }
+    //Modificar Horario Fin    
         public void modHorarioFin(String newHorarioFin){
-            if(newHorarioFin!=null){
-                this.horario_fin = newHorarioFin;
+                if(newHorarioFin!=null){
+                    this.horario_fin = newHorarioFin;
+                  }
               }
-          }
     
 }
 
