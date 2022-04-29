@@ -23,7 +23,7 @@ public class App {
         ArrayList<Evento> eventos = new ArrayList<Evento>();
         
         do{
-            System.out.println("1 - Tarea\n2 - Recordatorio \n3 - Evento \n 0-Salir"); //menu 
+            System.out.println("1 - Tarea\n2 - Recordatorio \n3 - Evento \n0 - Salir"); //menu 
             menu = sc.nextInt();
             sc.nextLine();
             
@@ -129,6 +129,7 @@ public class App {
                         sc.nextLine();
                         
                         switch(opc2){
+                            //Crear Evento
                             case 1:
                                 
                                 System.out.println("Ingrese el nombre del Evento:\n");
@@ -143,7 +144,7 @@ public class App {
                                 horario_fin = sc.nextLine();
                                 eventos.add(new Evento(name, desc,fecha_evento, horario_inicio, horario_fin));
                                 break;
-                                
+                                //Ver lista de Eventos
                             case 2:
                                 if(eventos.size() < 1){
                                     System.out.println("No hay eventos");
@@ -153,6 +154,46 @@ public class App {
                                         System.out.println(x+" / "+eventos.get(x).leerName()+" / "+eventos.get(x).leerDesc() + " / " +eventos.get(x).leerFecha() + " / " +eventos.get(x).leerHoraInicio()+" / " +eventos.get(x).leerHoraFin());
                                     }
                                 }
+                                System.out.println("Opciones a continuacion:\n1 - Modificar Evento\n2 - Eliminar Evento\n0 - Volver al menu principal");
+                                    opc2 = sc.nextInt();
+                                    sc.nextLine();
+                                    if(opc2 == 1 || opc2 == 2){
+                                        //Modificar Evento
+                                        System.out.println("Ingresar ID del evento");
+                                        opc3 = sc.nextInt();
+                                        sc.nextLine();
+                                        if(opc2 == 1){
+                                            System.out.println("Ingresar el nuevo nombre del evento");
+                                            name = sc.nextLine();
+                                            System.out.println("Ingresar la nueva descripcion del evento");
+                                            desc = sc.nextLine();
+                                            System.out.println("Ingresar la nueva fecha del evento");
+                                            fecha_evento = sc.nextLine();
+                                            System.out.println("Ingresar el nuevo horario de inicio del evento");
+                                            horario_inicio = sc.nextLine();
+                                            System.out.println("Ingresar el nuevo horario de fin del evento");
+                                            horario_fin = sc.nextLine();
+                                            
+                                            //if(eventos.get(opc3).modName(name)==1){
+                                                //System.out.println("Nombre modificado correctamente");
+                                            //}
+                                            if(eventos.get(opc3).modDesc(desc)==1){
+                                                System.out.println("Descripcion modificada correctamente");
+                                            }
+                                            //if(eventos.get(opc3).modFecha(fecha_evento)==1){
+                                                //System.out.println("Nombre modificado correctamente");
+                                            //}
+                                            //if(eventos.get(opc3).modHorarioInicio(horario_inicio)==1){
+                                                System.out.println("Descripcion modificada correctamente");
+                                            //}
+                                        //Eliminar Evento
+                                        }else if(opc2 == 2){
+                                            eventos.remove(opc3);
+                                            System.out.println("Evento Eliminado correctamente");
+                                        }
+                                    }
+                                
+                                        
                             break;
                         }
                         
