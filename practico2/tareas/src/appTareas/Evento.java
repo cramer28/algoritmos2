@@ -20,11 +20,15 @@ public class Evento extends Tarea {
         System.out.println("Fecha del evento: "+this.fecha_evento);
      }
         //Modificar Fecha
-        public void modFecha(String newfecha){
+        public int modFecha(String newfecha){
             if(newfecha!=null){
                 this.fecha_evento = newfecha;
+                return 1;
               }
-          }
+            else{
+            return 0;
+            }
+        }
     
     //Metodos Horarios
     public String leerHoraInicio(){
@@ -34,10 +38,14 @@ public class Evento extends Tarea {
         System.out.println("El horario de inicio es: "+this.horario_inicio);
      }
         //Modificar Horario Inicio
-        public void modHorarioInicio(String newHorarioInicio){
+        public int modHorarioInicio(String newHorarioInicio){
             if(newHorarioInicio!=null){
                 this.horario_inicio = newHorarioInicio;
+                return 1;
               }
+            else{
+            return 0;
+            }
           }
     
     
@@ -48,10 +56,14 @@ public class Evento extends Tarea {
         System.out.println("El horario de fin es: "+this.horario_fin);
      }
     //Modificar Horario Fin    
-        public void modHorarioFin(String newHorarioFin){
+        public int modHorarioFin(String newHorarioFin){
                 if(newHorarioFin!=null){
                     this.horario_fin = newHorarioFin;
+                    return 1;
                   }
+                else{
+                return 0;
+                }
               }
     
 }
