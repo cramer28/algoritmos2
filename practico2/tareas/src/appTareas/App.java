@@ -174,18 +174,21 @@ public class App {
                                             System.out.println("Ingresar el nuevo horario de fin del evento");
                                             horario_fin = sc.nextLine();
                                             
-                                            //if(eventos.get(opc3).modName(name)==1){
-                                                //System.out.println("Nombre modificado correctamente");
-                                            //}
+                                            if(eventos.get(opc3).modName(name)==1){
+                                                System.out.println("Nombre modificado correctamente");
+                                            }
                                             if(eventos.get(opc3).modDesc(desc)==1){
                                                 System.out.println("Descripcion modificada correctamente");
                                             }
-                                            //if(eventos.get(opc3).modFecha(fecha_evento)==1){
-                                                //System.out.println("Nombre modificado correctamente");
-                                            //}
-                                            //if(eventos.get(opc3).modHorarioInicio(horario_inicio)==1){
-                                                System.out.println("Descripcion modificada correctamente");
-                                            //}
+                                            if(eventos.get(opc3).modFecha(fecha_evento)==1){
+                                                System.out.println("Fecha modificada correctamente");
+                                            }
+                                            if(eventos.get(opc3).modHorarioInicio(horario_inicio)==1){
+                                                System.out.println("Horario de inicio modificado correctamente");
+                                            }
+                                            if(eventos.get(opc3).modHorarioFin(horario_fin)==1){
+                                                System.out.println("Horario de fin modificado correctamente");
+                                            }
                                         //Eliminar Evento
                                         }else if(opc2 == 2){
                                             eventos.remove(opc3);
