@@ -1,26 +1,26 @@
 
 package appTareas;
-
+import java.time.LocalDate;
 public class Evento extends Tarea {
-    protected String fecha_evento;
+    protected LocalDate fecha_evento;
     protected String horario_inicio;
     protected String horario_fin;
     
-    public Evento(String name, String desc, String fecha_evento, String horario_inicio , String horario_fin){
+    public Evento(String name, String desc, LocalDate fecha_evento, String horario_inicio , String horario_fin){
         super(name, desc);
         this.fecha_evento = fecha_evento;
         this.horario_inicio = horario_inicio;
         this.horario_fin = horario_fin;
     }
      //Metodos Fecha
-    public String leerFecha(){
+    public LocalDate leerFecha(){
     return this.fecha_evento;
      }
     public void MostrarFecha(){
         System.out.println("Fecha del evento: "+this.fecha_evento);
      }
         //Modificar Fecha
-        public int modFecha(String newfecha){
+        public int modFecha(LocalDate newfecha){
             if(newfecha!=null){
                 this.fecha_evento = newfecha;
                 return 1;

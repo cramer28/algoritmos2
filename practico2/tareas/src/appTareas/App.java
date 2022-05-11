@@ -8,18 +8,17 @@
  *
  */
 package appTareas;
-
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
 
 public class App {
-    
-    public static void main(String[] args) {
+      public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int menu, opc1,opc2,opc3,x;
-        String name, desc, fecha, hora, fecha_evento, horario_inicio, horario_fin;
+        String name, desc, fecha, hora,horario_inicio, horario_fin;
+        LocalDate fecha_evento;
         ArrayList<Tarea> tareas = new ArrayList<Tarea>();
         ArrayList<Recordatorio> recordatorios = new ArrayList<Recordatorio>();
         ArrayList<Evento> eventos = new ArrayList<Evento>();
