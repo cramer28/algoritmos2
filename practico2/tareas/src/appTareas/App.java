@@ -138,7 +138,7 @@ public class App {
                                 System.out.println("Ingrese la descripcion del Evento:");
                                 desc = sc.nextLine();
                                 System.out.println("Ingrese la fecha del Evento:");
-                                fecha_evento = sc.nextLine();
+                                //fecha_evento = sc.nextLine();
                                 System.out.println("Ingrese la hora de inicio del Evento:");
                                 horario_inicio = sc.nextLine();
                                 System.out.println("Ingrese la hora de fin del Evento:");
