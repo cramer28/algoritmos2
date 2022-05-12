@@ -10,7 +10,6 @@
 package appTareas;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import java.time.LocalDate;
 
 
@@ -18,10 +17,11 @@ public class App {
       public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int menu, opc1,opc2,opc3,x;
-        String name, desc, fecha, fecha_evento_str, hora,horario_inicio, horario_fin;
+        String name, desc, fecha, fecha_evento_str, fecha_recordatorio_str,hora,horario_inicio, horario_fin;
         
         LocalDate date_evento; // el metodo parse de LocalDate funciona solo con fechas del formato "yyyy-mm-dd" con 0s en los digitos vacios
                                // Ejemplo: "2019-01-01"
+        LocalDate date_recordatorio;
         
         ArrayList<Tarea> tareas = new ArrayList<>();
         ArrayList<Recordatorio> recordatorios = new ArrayList<>();
@@ -102,16 +102,16 @@ public class App {
                         switch(opc2){
                             case 1:
                                 
-                                System.out.println("Ingrese el nombre de la tarea:\n");
+                                System.out.println("Ingrese el nombre del recordatorio:");
                                 name = sc.nextLine();
-                                System.out.println("Ingrese la descripcion de la tarea:\n");
+                                System.out.println("Ingrese la descripcion del recordatorio:");
                                 desc = sc.nextLine();
-                                System.out.println("Ingrese la fecha de la tarea:\n");
-                                fecha = sc.nextLine();
-                                System.out.println("Ingrese la hora de la tarea:\n");
+                                System.out.println("Ingrese la fecha del recordatorio:");
+                                fecha_recordatorio_str = sc.nextLine();
+                                date_recordatorio = LocalDate.parse(fecha_recordatorio_str); //date_recordatorio guarda fecha_evento_str
+                                System.out.println("Ingrese la hora del recordatorio:");
                                 hora = sc.nextLine();
-                                
-                                recordatorios.add(new Recordatorio(name, desc,fecha, hora));
+                                recordatorios.add(new Recordatorio(name, desc,date_recordatorio, hora));
                                 break;
                                 
                             case 2:

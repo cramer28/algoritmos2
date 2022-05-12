@@ -4,24 +4,25 @@
  * and open the template in the editor.
  */
 package appTareas;
-
+import java.time.LocalDate;
 /**
  *
  * @author Sala2-02
  */
 public class Recordatorio extends Tarea{
     
-    String fecha, hora;
+    String hora;
+    LocalDate fecha;
     
     
     
-    public Recordatorio(String name, String desc, String fecha, String hora) {
+    public Recordatorio(String name, String desc, LocalDate fecha, String hora) {
         super(name, desc);
         this.fecha = fecha;
         this.hora = hora;
     }
     
-    void setFecha(String fecha){
+    void setFecha(LocalDate fecha){
         this.fecha = fecha;
     
     }
@@ -31,7 +32,7 @@ public class Recordatorio extends Tarea{
     
     }
     
-    String getFecha(){
+    LocalDate getFecha(){
         return this.fecha;
     }
     
