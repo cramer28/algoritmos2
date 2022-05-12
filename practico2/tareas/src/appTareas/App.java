@@ -10,18 +10,22 @@
 package appTareas;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.time.format.DateTimeFormatter;
+
 import java.time.LocalDate;
+
 
 public class App {
       public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int menu, opc1,opc2,opc3,x;
-        String name, desc, fecha, hora,horario_inicio, horario_fin;
-        LocalDate fecha_evento;
-        ArrayList<Tarea> tareas = new ArrayList<Tarea>();
-        ArrayList<Recordatorio> recordatorios = new ArrayList<Recordatorio>();
-        ArrayList<Evento> eventos = new ArrayList<Evento>();
+        String name, desc, fecha, fecha_evento_str, hora,horario_inicio, horario_fin;
+        
+        LocalDate date_evento; // el metodo parse de LocalDate funciona solo con fechas del formato "yyyy-mm-dd" con 0s en los digitos vacios
+                               // Ejemplo: "2019-01-01"
+        
+        ArrayList<Tarea> tareas = new ArrayList<>();
+        ArrayList<Recordatorio> recordatorios = new ArrayList<>();
+        ArrayList<Evento> eventos = new ArrayList<>();
         
         do{
             System.out.println("1 - Tarea\n2 - Recordatorio \n3 - Evento \n0 - Salir"); //menu 
@@ -32,7 +36,7 @@ public class App {
                 
                 case 1:
                     do{
-                        System.out.println("1 - Crear Tarea\n2 - Ver lista\n0 - Voler atras"); //tareas 
+                        System.out.println("1 - Crear Tarea\n2 - Ver lista\n0 - Volver atras"); //tareas 
                         opc1 = sc.nextInt();
                         sc.nextLine();
 
@@ -138,12 +142,14 @@ public class App {
                                 System.out.println("Ingrese la descripcion del Evento:");
                                 desc = sc.nextLine();
                                 System.out.println("Ingrese la fecha del Evento:");
-                                //fecha_evento = sc.nextLine();
+                                fecha_evento_str = sc.nextLine();
+                                date_evento = LocalDate.parse(fecha_evento_str); //date_evento guarda fecha_evento_str
+                                                   
                                 System.out.println("Ingrese la hora de inicio del Evento:");
                                 horario_inicio = sc.nextLine();
                                 System.out.println("Ingrese la hora de fin del Evento:");
                                 horario_fin = sc.nextLine();
-                                eventos.add(new Evento(name, desc,fecha_evento, horario_inicio, horario_fin));
+                                eventos.add(new Evento(name, desc,date_evento, horario_inicio, horario_fin));
                                 break;
                                 //Ver lista de Eventos
                             case 2:
@@ -169,7 +175,9 @@ public class App {
                                             System.out.println("Ingresar la nueva descripcion del evento:");
                                             desc = sc.nextLine();
                                             System.out.println("Ingresar la nueva fecha del evento:");
-                                            fecha_evento = sc.nextLine();
+                                            fecha_evento_str =  sc.nextLine();
+                                            date_evento = LocalDate.parse(fecha_evento_str);
+                                            
                                             System.out.println("Ingresar el nuevo horario de inicio del evento:");
                                             horario_inicio = sc.nextLine();
                                             System.out.println("Ingresar el nuevo horario de fin del evento:");
@@ -181,7 +189,7 @@ public class App {
                                             if(eventos.get(opc3).modDesc(desc)==1){
                                                 System.out.println("Descripcion modificada correctamente");
                                             }
-                                            if(eventos.get(opc3).modFecha(fecha_evento)==1){
+                                            if(eventos.get(opc3).modFecha(date_evento)==1){
                                                 System.out.println("Fecha modificada correctamente");
                                             }
                                             if(eventos.get(opc3).modHorarioInicio(horario_inicio)==1){
